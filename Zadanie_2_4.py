@@ -1,12 +1,15 @@
 
-#Tutaj próba możliwości wpisania liczb w jednej linijce...
+#Możliwości wpisania liczb w jednej linijce...
 
-pula_liczb = []
-liczby = input("Podaj liczby które chciałbyś dodać do puli - oddziel je przecinkami: ") #możliwość dodania liczb jedynie z zakresu 0 - 9
-for i in range(0,len(liczby),2):
-    pula_liczb.append(int(liczby[i]))
-
+pula_liczb = input("Podaj liczby które chciałbyś dodać do puli - oddziel je przecinkami: ").split(",")
 print (pula_liczb)
+for i in range(len(pula_liczb)):
+    pula_liczb[i] = int(pula_liczb[i])
+print (len(pula_liczb))
+print (sum(pula_liczb))
+print (f"{((sum(pula_liczb))/(len(pula_liczb))):.2f}")
+print (min(pula_liczb))
+print (max(pula_liczb))
 
 # INACZEJ - najpierw określić ile liczb chce się wprowadzić..
 

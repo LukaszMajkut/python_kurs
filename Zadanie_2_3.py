@@ -50,24 +50,64 @@ while True:
     if liczby[0][1] == "+":
         wynik = int(liczby[0][0]) + int(liczby[0][2])
         print (wynik)
-        del liczby[:3]
+        del liczby[:]
     elif liczby[0][1] == "-":
         wynik =int(liczby[0][0]) - int(liczby[0][2])
         print (wynik)
-        del liczby[:3]
+        del liczby[:]
     elif liczby [0][1] == "*":
         wynik = int(liczby[0][0]) * int(liczby[0][2])
         print (wynik)
-        del liczby[:3]
+        del liczby[:]
     elif liczby [0][1] == "/":
         wynik = int(liczby[0][0]) / int(liczby[0][2])
         print (wynik)
-        del liczby[:3]
+        del liczby[:]
     elif liczby [0] == "koniec":
         break
     else:
         print ("Wystapił błąd - obsługuję jedynie operatory takie jak: '+', '-', '*', '/'")
-        del liczby[:3]
+        del liczby[:]
 
 print ("Mam nadzieję, ze pomogłem! Do zobaczenia :) ")
+
+#-----------------------------------------------------------------
+# FINALNA WERSJA MOJEGO KALKULATORA
+#-----------------------------------------------------------------
+
+
+operator = None
+
+while operator != 'koniec':
+    operator = input("Wybierz który operator będziesz używał w działaniu - dostępne opcje \
+'+','-','*','/'")
+    if operator == '+':
+        dzialanie = input("Wpisz działanie, które chciałbyś obliczyć:\n").split('+')
+        for i in range(len(dzialanie)):
+            dzialanie[i] = int(dzialanie[i])
+        print(sum(dzialanie))
+
+
+    elif operator == '-':
+        dzialanie = input("Wpisz działanie, które chciałbyś obliczyć:\n").split('-')
+        for i in range(len(dzialanie)):
+            dzialanie[i] = int(dzialanie[i])
+        print(f'{dzialanie[0] - dzialanie[1]}')
+
+    elif operator == '*':
+        dzialanie = input("Wpisz działanie, które chciałbyś obliczyć:\n").split('*')
+        for i in range(len(dzialanie)):
+            dzialanie[i] = int(dzialanie[i])
+        print(f'{dzialanie[0] * dzialanie[1]}')
+
+    elif operator == '/':
+        dzialanie = input("Wpisz działanie, które chciałbyś obliczyć:\n").split('/')
+        for i in range(len(dzialanie)):
+            dzialanie[i] = int(dzialanie[i])
+        print(f'{dzialanie[0] / dzialanie[1]}')
+
+    else:
+        print("Wprowadzono błędny operator")
+
+print("Dziękujemy za skorzystanie z programu")
 
