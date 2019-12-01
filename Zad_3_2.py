@@ -22,8 +22,7 @@ def dni_miesiaca(miesiac):
         return ("Ten miesiac ma 30 dni")
     elif miesiac == 'luty':
         rok = int(input("A jaki rok Cię interesuje?"))
-        lata_przestepne = [i for i in range (0,100000,4)]
-        if rok in lata_przestepne:
+        if rok % 4 == 0 and rok % 100 != 0 or rok % 400 == 0:
             return (f"W roku {rok} luty mial 29 dni, poniewaz rok ten był rokiem przestepnym")
         else:
             return (f"W roku {rok} luty mial 28 dni")

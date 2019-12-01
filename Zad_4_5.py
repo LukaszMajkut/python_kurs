@@ -21,7 +21,7 @@ class Zolw:
     def obroc_sie(self, obrot):
         self.obrot = obrot
         self.kurs += self.obrot
-        if self.kurs == 360:
+        if self.kurs >= 360:
             self.kurs = 0
     def idz(self, odleglosc):
         self.odleglosc = odleglosc

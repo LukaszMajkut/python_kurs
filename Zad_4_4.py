@@ -8,7 +8,7 @@ Przerób klasę `Zbiornik` tak, żeby miała też drugi atrybut - `temperatura`.
  powinno powodować zmianę temperatury wody w zbiorniku (zgodnie ze zwykłymi prawami fizyki).
 """
 
-class Zbiorniki:
+class Zbiornik:
     def __init__(self, ilosc_wody = 0, temperatura = None):
         self.ilosc_wody = ilosc_wody
         self.temperatura = temperatura
@@ -30,7 +30,7 @@ class Zbiorniki:
     def __str__(self):
         return f'Zbiornik z {self.ilosc_wody} o temperaturze równej {self.temperatura} stopni C'
 
-zbiornik = Zbiorniki()
+zbiornik = Zbiornik()
 print (zbiornik)
 zbiornik.dolej(10,30)
 print (zbiornik)

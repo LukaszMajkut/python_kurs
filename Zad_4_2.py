@@ -30,14 +30,10 @@ lista_ogloszen.append(mercedes)
 lista_ogloszen.append(audi)
 
 
-#def wyszukiwarka_max_cena(cena):
-#    wynik_wyszukiwania = []
-#    for i in lista_ogloszen:
-#       wynik_wyszukiwania.append(lista_ogloszen[i].cena <= cena)
-#    return wynik_wyszukiwania
+cena_max = int(input("Do jakiej ceny poszukujesz samochodu?"))
 
+wynik = list(filter(lambda ogloszenie: ogloszenie.cena <= cena_max, lista_ogloszen ))
 
-kryterium = int(input("Do jakiej ceny poszukujesz samochodu?"))
+for i in wynik:
+    print (i.__str__())
 
-#wynik = list(filter(lambda x=kryterium: x >= lista_ogloszen[i].cena, lista_ogloszen ))
-#print (wynik)
