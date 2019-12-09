@@ -24,6 +24,7 @@ class Zolw:
         if self.kurs >= 360:
             self.kurs = 0
     def idz(self, odleglosc):
+        import math
         self.odleglosc = odleglosc
         if self.kurs == 0:
             self.y += self.odleglosc
@@ -33,10 +34,16 @@ class Zolw:
             self.y -= self.odleglosc
         elif self.kurs == 270:
             self.x -= self.odleglosc
+        #elif self.kurs == 45:
+        #   self.x += self.odleglosc*math.cos(self.obrot)
+        #   self.y += self.odleglosc*math.sin(self.obrot)
     def __str__(self):
         return f'x = {self.x}, y = {self.y}'
 
-z = Zolw(100,100)
+z = Zolw(0,0)
+z.obroc_sie(45)
+z.idz(100)
+print(z)
 z.idz(50)
 print(z)
 z.obroc_sie(360)
