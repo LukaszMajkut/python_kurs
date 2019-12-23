@@ -21,9 +21,11 @@ class Document:
         self.element = element
         self._elements.append(self.element)
     def __str__(self):
-        #for i in self._elements: - zwraca jedynie pierwszy element..
-        #   return f'{i}'
-            return f'{self._elements[0]}  {self._elements[1]}  {self._elements[2]}'
+        napis = ''
+        for i in self._elements:
+            napis += str(i)
+        return (napis)
+
     def render(self):
         for i in self._elements:
             print (i)
@@ -36,7 +38,7 @@ class Element:
 
 class HeaderElement(Element):
     def __str__(self):
-        return f'{self.content}\n======'
+        return f'{self.content}\n{(len(self.content))*"="}'
 
 class LinkElement(Element):
     def __init__(self, content, url):
