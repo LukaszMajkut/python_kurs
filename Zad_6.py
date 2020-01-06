@@ -18,8 +18,7 @@ with urllib.request.urlopen(zapytanie) as req:
     print(req.getcode())
 
     zawartosc = json.loads(req.read())
-    print (zawartosc['title']['location_type']['woeid'])
-    city_id = zawartosc['woeid']
+    city_id = zawartosc[0]['woeid']
     url2 = f'https://www.metaweather.com/api/location/{city_id}'
 
     zapytanie2 = Request(url2)
@@ -29,5 +28,5 @@ with urllib.request.urlopen(zapytanie) as req:
         print(req2.info())
         print(req2.getcode())
 
-        zawartosc2  = json.loads(req2.read())
-        print (f'Temperatura w miejscie o nazwie {zawartosc["title"]} wynosi {zawartosc2["the_temp"]}')
+        zawartosc2 = json.loads(req2.read())
+        print (f'Temperatura w miejscie o nazwie {zawartosc[0]["title"]} wynosi {zawartosc2["consolidated_weather"][0]["the_temp"]}')
