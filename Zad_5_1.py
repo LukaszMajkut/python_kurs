@@ -2,22 +2,27 @@ import os
 import sys
 import csv
 
+#plik = open("zawodnicy.csv", encoding="utf8")
+#zawartosc = plik.read()
+#print(zawartosc)
+#plik.close()
+
 wzrost_min = None
 wzrost_max = None
 waga_min = None
 waga_max = None
 waga_suma = 0
-POL = 0
+pol = 0
 wzrost_pol = 0
-GER = 0
+ger = 0
 wzrost_ger = 0
-FIN = 0
+fin = 0
 wzrost_fin = 0
-AUT = 0
+aut = 0
 wzrost_aut = 0
-NOR = 0
+nor = 0
 wzrost_nor = 0
-USA = 0
+usa = 0
 wzrost_usa = 0
 
 with open ("zawodnicy.csv", encoding="utf8") as plik:
@@ -73,29 +78,29 @@ with open ("zawodnicy.csv", encoding="utf8") as plik:
             wzrost = int(wzrost)
             waga = int(waga)
             if narodowosc == 'POL':
-                POL += 1
+                pol += 1
                 wzrost_pol += wzrost
             elif narodowosc == 'GER':
-                GER += 1
+                ger += 1
                 wzrost_ger += wzrost
             elif narodowosc == 'FIN':
-                FIN += 1
+                fin += 1
                 wzrost_fin += wzrost
             elif narodowosc == 'AUT':
-                AUT += 1
+                aut += 1
                 wzrost_aut += wzrost
             elif narodowosc == 'NOR':
-                NOR += 1
+                nor += 1
                 wzrost_nor += wzrost
             elif narodowosc == 'USA':
-                USA += 1
+                usa += 1
                 wzrost_usa += wzrost
         print(f'Ilość skoczków poszczególnych narodowsci przedstawia się następująco:\n'
-              f'"POL" -- {POL} -- średni wzrost polskich skoczków wynosi {wzrost_pol / POL:.2f}\n'
-              f'"GER" -- {GER} -- średni wzrost niemieckich skoczków wynosi {wzrost_ger / GER:.2f}\n'
-              f'"FIN" -- {FIN} -- średni wzrost fińskich skoczków wynosi {wzrost_fin / FIN:.2f}\n'
-              f'"AUT" -- {AUT} -- średni wzrost austryjackich skoczków wynosi {wzrost_aut / AUT:.2f}\n'
-              f'"NOR" -- {NOR} -- średni wzrost norweskich skoczków wynosi {wzrost_nor / NOR:.2f}\n'
-              f'"USA" -- {USA} -- średni wzrost amerykanskich skoczków wynosi {wzrost_usa / USA:.2f}')
+              f'"POL" -- {pol} -- średni wzrost polskich skoczków wynosi {wzrost_pol / pol:.2f}\n'
+              f'"GER" -- {ger} -- średni wzrost niemieckich skoczków wynosi {wzrost_ger / ger:.2f}\n'
+              f'"FIN" -- {fin} -- średni wzrost fińskich skoczków wynosi {wzrost_fin / fin:.2f}\n'
+              f'"AUT" -- {aut} -- średni wzrost austryjackich skoczków wynosi {wzrost_aut / aut:.2f}\n'
+              f'"NOR" -- {nor} -- średni wzrost norweskich skoczków wynosi {wzrost_nor / nor:.2f}\n'
+              f'"USA" -- {usa} -- średni wzrost amerykanskich skoczków wynosi {wzrost_usa / usa:.2f}')
 
 

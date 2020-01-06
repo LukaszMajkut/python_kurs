@@ -8,11 +8,14 @@ liczba_znakow = []
 with open(nazwa_pliku) as plik:
     for linia in plik:
         slowa = linia.split(" ")
-        liczba_slow.extend(slowa)
-        for slowo in slowa:
-            if slowo not in slowa:
+        slowa_gole = []
+        for i in slowa:
+            slowa_gole.append(i.strip(" .,;:!?\n"))
+        liczba_slow.extend(slowa_gole)
+        for slowo in slowa_gole:
+            if slowo not in slowa_gole:
                 ilosc_slow[slowo] = 1
-            if slowo in slowa:
+            elif slowo in slowa_gole:
                 ilosc_slow[slowo] += 1
         for znak in linia:
             liczba_znakow.append(znak)
